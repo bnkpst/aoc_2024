@@ -15,6 +15,7 @@ for line in locations:
 left.sort()
 right.sort()
 
+
 for l, r in zip(left, right):
     diffs.append(abs(l - r))
 
