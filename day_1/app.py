@@ -1,6 +1,26 @@
 
 with open('./input.txt') as f:
     
-    locations = f.read()
+    locations = f.readlines()
 
-print(locations)
+diffs = []
+left = []
+right = []
+
+for line in locations:
+    tmp = line.split()
+    left.append(int(tmp[0]))
+    right.append(int(tmp[1]))
+
+left.sort()
+right.sort()
+
+for l, r in zip(left, right):
+    diffs.append(abs(l - r))
+
+sum = sum(diffs)
+
+print("Answer: ", sum)
+    
+
+
